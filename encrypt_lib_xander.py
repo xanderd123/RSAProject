@@ -14,16 +14,23 @@ def get_message():
     test_message = 'Hello this is a test'
     return test_message
 
+
+
+
 def get_encryption_key(filename):
     """
     open the file with the filename
     know the format
     read in the exponent and modulus
     return a 2-tuple of exponent and modululs
+    use the notepad
     """
+
     # TODO: Xander
     encryption_key = (65537, 12)
     return encryption_key
+
+
 
 def split_message_into_chunks(message):
     """
@@ -91,9 +98,19 @@ def base64_encode_numbers(numbers):
     base64_encoded_strings= ['aaaaa','bcdef','ghtff']
     return base64_encoded_strings
 
+
+
 def save_encrypted_string(cipher_text):
     """
     takes encrypted message and saves it
+
+    Need to define save_encrypted_string
+    and save it
     """
-    # TODO: Xander
+    fname = 'something.txt'
+    with open(fname,'w') as outf:
+
+        outf.write(cipher_text)
+
+        # TODO: Xander
     pass
