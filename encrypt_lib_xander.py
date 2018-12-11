@@ -1,4 +1,4 @@
-
+import os
 """
 This is the Encryption Library module
 """
@@ -26,11 +26,22 @@ def get_encryption_key(filename):
     use the notepad
     """
 
-    # TODO: Xander
-    encryption_key = (65537, 12)
+
+    my_dir = os.path.dirname(os.path.realpath(__file__))
+    #filename ="encryption_key.txt"
+    with open (my_dir + '/' + filename, 'r') as ifile:
+        exp = int(next(ifile))
+        n = int(next(ifile))
+        # for line in ifile:
+        #     #TODO: Split exponet and
+        #     print(line)
+
+        # TODO: Xander
+        encryption_key = (exp, n)
+
     return encryption_key
 
-
+print(get_encryption_key('encryptionkey.txt'))
 
 def split_message_into_chunks(message):
     """
